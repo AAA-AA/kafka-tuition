@@ -1,0 +1,36 @@
+server:
+  port: 9083
+
+spring:
+  kafka:
+    # 集群地址需要重新配置
+    bootstrap-servers: xx.xx.xx.xx:xxx
+    producer:
+      retries: 3
+      batch-size: 500
+      buffer-memory: 104857600
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+      properties:
+        request:
+          timeout:
+            ms: 10000
+        linger.ms: 5
+        max:
+          request:
+            size: 20485760
+
+    consumer:
+      enable-auto-commit: false
+      auto-commit-interval: 100ms
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      properties:
+        session.timeout.ms: 15000
+      group-id: demo
+
+    topic:
+      group-id: topicGroupId
+      topic-name: topic-test2
+
+
