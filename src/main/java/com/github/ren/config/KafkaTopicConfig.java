@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Configuration;
  * Created by renhongqiang on 2019-06-05 17:17
  */
 @Configuration
-@ConfigurationProperties("kafka.topic")
+@ConfigurationProperties("spring.kafka.topic")
 public class KafkaTopicConfig {
     private String groupId;
     private String topicName;

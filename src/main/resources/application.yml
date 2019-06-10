@@ -4,7 +4,7 @@ server:
 spring:
   kafka:
     # 集群地址需要重新配置
-    bootstrap-servers: xx.xx.xx.xx:xxx
+    bootstrap-servers: xx.xx.xx.xx:xx
     producer:
       retries: 3
       batch-size: 500
@@ -30,7 +30,7 @@ spring:
       group-id: demo
 
     topic:
-      group-id: topicGroupId
-      topic-name: topic-test2
+      groupId: topicGroupId
+      topicName: topic-test2
 
 
